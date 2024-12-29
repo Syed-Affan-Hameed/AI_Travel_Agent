@@ -16,7 +16,7 @@ const getWeatherForecast = async (geoCodes: { lat: string; long: string }) => {
   //const unixTime = getUnixTime(dateStr);
   //const url = `https://api.openweathermap.org/data/3.0/onecall/timemachine?lat=${lat}&lon=${long}&dt=${unixTime}&appid=${OpenWeatherApiKey}`;
   //const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${OpenWeatherApiKey}`;
-//current weather url 
+ //current weather url 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${OpenWeatherApiKey}`;
   try {
 
