@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { OpenAI } from "openai"; // Adjust the import based on your actual library
 import dotenv from "dotenv";
 import { newTools } from "../tools/tools";
+import { getFlightData } from "../tools/tools";
 //@ts-ignore
 import Amadeus from "amadeus";
 dotenv.config();
@@ -47,3 +48,17 @@ export const planMyTrip = async (req: Request, res: Response) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const fetchLocalFlightData = async (req: Request, res: Response) => {
+    try {
+
+        const flightDetails :{ budget :number ,originCode:string , destinationCode:string ,dateOfDeparture: string} = req.body;
+        const resultFlightData = await getFlightData(flightDetails);
+        res.status(200).json(resultFlightData);
+
+    } catch (error: any) {
+        res.status(500).json({ message: error.message });
+        
+    }
+  
+}

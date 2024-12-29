@@ -109,3 +109,110 @@ export const newTools   = [
     },
   },
 ];
+
+export const getFlightData = async ( userFlightRequest:{ budget :number ,originCode:string , destinationCode:string ,dateOfDeparture: string}) => {
+    const originCode = 'MEL';
+    const destinationCode = 'JFK';
+    const dateOfDeparture = '2024-12-30';
+    const {budget} = userFlightRequest;
+
+    try {
+        const response = await amadeus.shopping.flightOffersSearch.get({
+            originLocationCode: originCode,
+            destinationLocationCode: destinationCode,
+            departureDate: dateOfDeparture,
+            adults: '1',
+            max: '1',
+            currencyCode: 'INR'
+        });
+        console.log("raw api response", JSON.stringify(response));
+        const budgetInNumericals = budget;
+        const flightDetails = extractFlightDetails(response, budgetInNumericals);
+        return flightDetails;
+    } catch (error) {
+        console.error('Error fetching flight data:', error);
+    }
+};
+
+interface Seating {
+    cabin: string;
+    class: string;
+    fareBasis: string;
+    brandedFare: string;
+    brandedFareLabel: string;
+    price: string;
+}
+
+interface SegmentDetails {
+    departure: any;
+    arrival: any;
+    carrierCode: string;
+    flightNumber: string;
+    duration: string;
+    aircraft: string;
+    seating: Seating[];
+}
+
+const extractFlightDetails = (data:any, budget:number) => {
+    const flightOffers = data.data;
+    const result:any[] = [];
+
+    flightOffers.forEach((offer :any) => {
+        const offerDetails: { id: string; price: string; currency: string; itineraries: { segments: SegmentDetails[] }[] } = {
+            id: offer.id,
+            price: offer.price.total,
+            currency: offer.price.currency,
+            itineraries: []
+        };
+
+        offer.itineraries.forEach((itinerary :any) => {
+            const itineraryDetails = {
+                segments: [] as SegmentDetails[]
+            };
+
+            itinerary.segments.forEach((segment:any) => {
+                const segmentDetails: SegmentDetails = {
+                    departure: segment.departure,
+                    arrival: segment.arrival,
+                    carrierCode: segment.carrierCode,
+                    flightNumber: segment.number,
+                    duration: segment.duration,
+                    aircraft: segment.aircraft.code,
+                    seating: []
+                };
+
+                offer.travelerPricings.forEach((travelerPricing:any) => {
+                    travelerPricing.fareDetailsBySegment.forEach((fareDetail:any) => {
+                        if (fareDetail.segmentId === segment.id) {
+                            const seatPrice = parseFloat(travelerPricing.price.total);
+                            if (seatPrice <= budget) {
+                                segmentDetails.seating.push({
+                                    cabin: fareDetail.cabin,
+                                    class: fareDetail.class,
+                                    fareBasis: fareDetail.fareBasis,
+                                    brandedFare: fareDetail.brandedFare,
+                                    brandedFareLabel: fareDetail.brandedFareLabel,
+                                    price: travelerPricing.price.total
+                                });
+                            }
+                        }
+                    });
+                });
+
+                if (segmentDetails.seating.length > 0) {
+                    itineraryDetails.segments.push(segmentDetails);
+                }
+            });
+
+            if (itineraryDetails.segments.length > 0) {
+                offerDetails.itineraries.push(itineraryDetails);
+            }
+        });
+
+        if (offerDetails.itineraries.length > 0) {
+            result.push(offerDetails);
+        }
+    });
+
+    return result;
+};
