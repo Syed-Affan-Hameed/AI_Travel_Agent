@@ -173,7 +173,7 @@ export const getFlightData = async (userFlightRequest: {
       destinationLocationCode: destinationCode,
       departureDate: dateOfDeparture,
       adults: "1",
-      max: "1",
+      max: "1",// increase for better recommendations
       currencyCode: "INR",
     });
     console.log("raw api response", JSON.stringify(response));
