@@ -31,7 +31,7 @@ export const planMyTrip = async (req: Request, res: Response) => {
     chatMessagesArray.push({ role: "user", content: query });
     //@ts-ignore
     const runner = openai.beta.chat.completions.runTools({
-        model: "gpt-3.5-turbo-1106",
+        model: "gpt-4",
         messages: chatMessagesArray,
         tools: newTools,
       })
@@ -52,7 +52,7 @@ export const planMyTrip = async (req: Request, res: Response) => {
 export const fetchLocalFlightData = async (req: Request, res: Response) => {
     try {
 
-        const flightDetails :{ budget :number ,originCode:string , destinationCode:string ,dateOfDeparture: string} = req.body;
+        const flightDetails :{ budget :number ,originCity:string , destinationCity:string ,dateOfDeparture: string} = req.body;
         const resultFlightData = await getFlightData(flightDetails);
         res.status(200).json(resultFlightData);
 
