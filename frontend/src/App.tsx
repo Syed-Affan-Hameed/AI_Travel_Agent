@@ -3,7 +3,7 @@ import { Card } from './components/ui/card'
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
-import { MinusCircle, PlusCircle, Plane } from 'lucide-react'
+import { MinusCircle, PlusCircle, Send } from 'lucide-react'
 import axios from 'axios'
 
 function App() {
@@ -15,20 +15,10 @@ function App() {
     toDate: '2023-12-05',
     budget: '$5000'
   })
-  interface TripDetails {
-    fromDate: string;
-    toDate: string;
-    flyingFrom: string;
-    flyingTo: string;
-    weather: string;
-    flights: string;
-    hotel: string;
-  }
-
-  const [tripDetails, setTripDetails] = useState<TripDetails | null>(null)
+  const [tripDetails, setTripDetails] = useState('')
   const [activeTab, setActiveTab] = useState('plan')
 
-  const handleInputChange = (e :any) => {
+  const handleInputChange = (e:any) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
@@ -36,14 +26,8 @@ function App() {
   const handlePlanTrip = async () => {
     try {
       const response = await axios.post('https://api.example.com/plan-trip', formData)
-      if(response.data){
-        setTripDetails(response.data);
-        console.log("Server response",response.data);
-        
-        setActiveTab('details')
-      } else{
-        throw new Error('No data received from server');
-      }
+      setTripDetails(response.data.message)
+      setActiveTab('details')
     } catch (error) {
       console.error('Error planning trip:', error)
       // Handle error (e.g., show error message to user)
@@ -143,51 +127,26 @@ function App() {
             </Button>
           </TabsContent>
 
-          <TabsContent value="details" className="p-6 space-y-6">
-            {tripDetails && (
-              <>
-                <div className="flex justify-between items-center">
-                  <div className="bg-blue-100 rounded-full px-4 py-2 text-sm">
-                    {tripDetails.fromDate}
-                  </div>
-                  <Plane className="h-4 w-4 text-blue-500" />
-                  <div className="bg-blue-100 rounded-full px-4 py-2 text-sm">
-                    {tripDetails.toDate}
-                  </div>
+          <TabsContent value="details" className="p-6">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-4">
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                  AI
                 </div>
-
-                <div className="bg-blue-100 rounded-full px-4 py-2 text-center">
-                  {tripDetails.flyingFrom} → {tripDetails.flyingTo}
+                <div className="flex-1 bg-blue-100 rounded-lg p-4">
+                  <p className="text-sm text-gray-800 whitespace-pre-wrap">{tripDetails}</p>
                 </div>
-
-                <Card className="p-4 space-y-2">
-                  <h3 className="font-medium">Weather</h3>
-                  <p className="text-sm text-gray-600">
-                    {tripDetails.weather}
-                  </p>
-                </Card>
-
-                <Card className="p-4 space-y-2">
-                  <h3 className="font-medium">Flights</h3>
-                  <p className="text-sm text-gray-600">
-                    {tripDetails.flights}
-                  </p>
-                  <Button className="w-full rounded-full bg-emerald-400 hover:bg-emerald-500">
-                    Book
-                  </Button>
-                </Card>
-
-                <Card className="p-4 space-y-2">
-                  <h3 className="font-medium">Hotel</h3>
-                  <p className="text-sm text-gray-600">
-                    {tripDetails.hotel}
-                  </p>
-                  <Button className="w-full rounded-full bg-emerald-400 hover:bg-emerald-500">
-                    Book
-                  </Button>
-                </Card>
-              </>
-            )}
+              </div>
+              <div className="flex items-center space-x-2">
+                <Input 
+                  placeholder="Ask a question about your trip..." 
+                  className="flex-1 rounded-full"
+                />
+                <Button size="icon" className="rounded-full">
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
           </TabsContent>
         </Tabs>
       </Card>

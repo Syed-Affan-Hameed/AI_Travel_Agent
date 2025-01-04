@@ -26,7 +26,6 @@ interface SegmentDetails {
   arrival: any;
   flightNumber: string;
   duration: string;
-  carrierCode:string;
   seating: Seating[];
 }
 
@@ -37,16 +36,13 @@ interface LimitedSegmentDetails {
     arrivalTime: string;
     duration: string;
     seating: string;
-    airlineName: string;
   }
 
-  interface limitedFlightsDetails {
+  interface limitedFlightDetails {
     id: string;
     price: string;
     itineraries: { segments: LimitedSegmentDetails[] }[];
   }
-
-  let carrierDictionary: any = {};
 // The function gets the weather forecast for a given city for 5 days with data every 3 hours by geographic coordinates.
 const getWeatherForecast = async (geoCodes: { lat: string; long: string }) => {
   const OpenWeatherApiKey = process.env.OPEN_WEATHER_API_KEY;
@@ -151,7 +147,6 @@ const getIATACode = async (obj: {
 };
 
 export const getFlightData = async (userFlightRequest: {
-  noOfTravellers:number;
   budget: number;
   originCity: string;
   destinationCity: string;
@@ -159,7 +154,6 @@ export const getFlightData = async (userFlightRequest: {
 }) => {
   const originCity = userFlightRequest.originCity;
   const destinationCity = userFlightRequest.destinationCity;
-  const noOfTravellers = userFlightRequest.noOfTravellers;
 
   const originCode = await getIATACode({
     page: 1,
@@ -178,8 +172,8 @@ export const getFlightData = async (userFlightRequest: {
       originLocationCode: originCode,
       destinationLocationCode: destinationCode,
       departureDate: dateOfDeparture,
-      adults: noOfTravellers.toString(),
-      max: "1",// increase for better recommendations
+      adults: "1",
+      max: "3",// increase for better recommendations
       currencyCode: "INR",
     });
     console.log("raw api response", JSON.stringify(response));
@@ -263,7 +257,6 @@ const extractFlightDetailsWithoutBudget =(data: any) => {
           arrival: segment.arrival,
           flightNumber: segment.number,
           duration: segment.duration,
-          carrierCode: segment.carrierCode,
           seating: [],
         };
 
@@ -303,23 +296,21 @@ const extractFlightDetailsWithoutBudget =(data: any) => {
   return result;
 };
 
-const convertToLimitedFlightDetails = (detailedFlightDetails: any[]): limitedFlightsDetails[] => {
+const convertToLimitedFlightDetails = (detailedFlightDetails: any[]): limitedFlightDetails[] => {
     return detailedFlightDetails.map((flight) => {
       const limitedItineraries = flight.itineraries.map((itinerary: any) => {
         const limitedSegments = itinerary.segments.map((segment: any) => {
           const seating = segment.seating.map((seat: any) => seat.cabin).join(", ");
-          const limitedSegmentDetails: LimitedSegmentDetails = {
+          return {
             departureIataCode: segment.departure.iataCode,
             arrivalIataCode: segment.arrival.iataCode,
             departureTime: segment.departure.at,
             arrivalTime: segment.arrival.at,
             duration: segment.duration,
             seating: seating,
-            airlineName: carrierDictionary[segment.carrierCode],
-          }
-          return limitedSegmentDetails;
+          };
         });
-
+  
         return { segments: limitedSegments };
       });
   
@@ -334,7 +325,6 @@ const convertToLimitedFlightDetails = (detailedFlightDetails: any[]): limitedFli
 
 const extractFlightDetails = (data: any, budget: number) => {
   const flightOffers = data.data;
-  carrierDictionary = data.result.dictionaries.carriers;
   const result: any[] = [];
 
   flightOffers.forEach((offer: any) => {
@@ -357,7 +347,6 @@ const extractFlightDetails = (data: any, budget: number) => {
 
       itinerary.segments.forEach((segment: any) => {
         const segmentDetails: SegmentDetails = {
-          carrierCode: segment.carrierCode,
           departure: segment.departure,
           arrival: segment.arrival,
           flightNumber: segment.number,
@@ -452,7 +441,6 @@ export const newTools = [
         parameters: {
           type: "object",
           properties: {
-            noOfTravellers: { type: "number" , description: "Number of Travellers this should be inferred from the user prompt if not given explicitly" },
             budget: { type: "number",description: "User's Budget to Travel in INR(Indian Rupees)" },
             originCity: { type: "string" },
             destinationCity: { type: "string" },

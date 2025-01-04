@@ -1,0 +1,376 @@
+{
+  "headers": {
+    "date": "Sat, 04 Jan 2025 13:45:38 GMT",
+    "content-type": "application/vnd.amadeus+json",
+    "content-length": "2952",
+    "connection": "keep-alive",
+    "ama-internal-message-version": "14.1",
+    "ama-request-id": "0001O1PYLPKGVY",
+    "ama-gateway-request-id": "rrt-0746b3a147511806e-b-de-243274-563123462-4",
+    "access-control-allow-headers": "origin, x-requested-with, accept, Content-Type, Authorization",
+    "access-control-max-age": "3628800",
+    "access-control-allow-methods": "*",
+    "server": "Amadeus",
+    "access-control-allow-origin": "*"
+  },
+  "statusCode": 200,
+  "request": {
+    "host": "test.api.amadeus.com",
+    "port": 443,
+    "ssl": true,
+    "scheme": "https",
+    "verb": "GET",
+    "path": "/v2/shopping/flight-offers",
+    "params": {
+      "originLocationCode": "DEL",
+      "destinationLocationCode": "LON",
+      "departureDate": "2025-01-17",
+      "adults": "2",
+      "max": "1",
+      "currencyCode": "INR"
+    },
+    "queryPath": "/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=LON&departureDate=2025-01-17&adults=2&max=1&currencyCode=INR",
+    "bearerToken": "FC0Ay7slu4fgb3SY03hvnqRPx0BV",
+    "clientVersion": "11.0.0",
+    "languageVersion": "20.17.0",
+    "appId": null,
+    "appVersion": null,
+    "headers": {
+      "User-Agent": "amadeus-node/11.0.0 node/20.17.0",
+      "Accept": "application/json, application/vnd.amadeus+json",
+      "Authorization": "Bearer FC0Ay7slu4fgb3SY03hvnqRPx0BV",
+      "Content-Type": "application/vnd.amadeus+json"
+    },
+    "ListHTTPOverride": [
+      "/v2/shopping/flight-offers",
+      "/v1/shopping/seatmaps",
+      "/v1/shopping/availability/flight-availabilities",
+      "/v2/shopping/flight-offers/prediction",
+      "/v1/shopping/flight-offers/pricing",
+      "/v1/shopping/flight-offers/upselling"
+    ]
+  },
+  "body": "{\"meta\":{\"count\":1,\"links\":{\"self\":\"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=LON&departureDate=2025-01-17&adults=2&max=1&currencyCode=INR\"}},\"data\":[{\"type\":\"flight-offer\",\"id\":\"1\",\"source\":\"GDS\",\"instantTicketingRequired\":false,\"nonHomogeneous\":false,\"oneWay\":false,\"isUpsellOffer\":false,\"lastTicketingDate\":\"2025-01-07\",\"lastTicketingDateTime\":\"2025-01-07\",\"numberOfBookableSeats\":9,\"itineraries\":[{\"duration\":\"PT10H30M\",\"segments\":[{\"departure\":{\"iataCode\":\"DEL\",\"terminal\":\"3\",\"at\":\"2025-01-17T06:20:00\"},\"arrival\":{\"iataCode\":\"LHR\",\"terminal\":\"2\",\"at\":\"2025-01-17T11:20:00\"},\"carrierCode\":\"AC\",\"number\":\"851\",\"aircraft\":{\"code\":\"77W\"},\"operating\":{\"carrierCode\":\"AC\"},\"duration\":\"PT10H30M\",\"id\":\"1\",\"numberOfStops\":0,\"blacklistedInEU\":false}]}],\"price\":{\"currency\":\"INR\",\"total\":\"53898.00\",\"base\":\"19200.00\",\"fees\":[{\"amount\":\"0.00\",\"type\":\"SUPPLIER\"},{\"amount\":\"0.00\",\"type\":\"TICKETING\"}],\"grandTotal\":\"53898.00\"},\"pricingOptions\":{\"fareType\":[\"PUBLISHED\"],\"includedCheckedBagsOnly\":false},\"validatingAirlineCodes\":[\"AC\"],\"travelerPricings\":[{\"travelerId\":\"1\",\"fareOption\":\"STANDARD\",\"travelerType\":\"ADULT\",\"price\":{\"currency\":\"INR\",\"total\":\"26949.00\",\"base\":\"9600.00\"},\"fareDetailsBySegment\":[{\"segmentId\":\"1\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"KLO00ABA\",\"brandedFare\":\"BASIC\",\"brandedFareLabel\":\"BASIC\",\"class\":\"K\",\"includedCheckedBags\":{\"quantity\":0},\"amenities\":[{\"description\":\"CHECKED BAG FIRST\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHECKED BAG SECOND\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"COMPLIMENTARY MEAL\",\"isChargeable\":false,\"amenityType\":\"MEAL\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"BASIC SEAT\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]}]},{\"travelerId\":\"2\",\"fareOption\":\"STANDARD\",\"travelerType\":\"ADULT\",\"price\":{\"currency\":\"INR\",\"total\":\"26949.00\",\"base\":\"9600.00\"},\"fareDetailsBySegment\":[{\"segmentId\":\"1\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"KLO00ABA\",\"brandedFare\":\"BASIC\",\"brandedFareLabel\":\"BASIC\",\"class\":\"K\",\"includedCheckedBags\":{\"quantity\":0},\"amenities\":[{\"description\":\"CHECKED BAG FIRST\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHECKED BAG SECOND\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"COMPLIMENTARY MEAL\",\"isChargeable\":false,\"amenityType\":\"MEAL\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"BASIC SEAT\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]}]}]}],\"dictionaries\":{\"locations\":{\"LHR\":{\"cityCode\":\"LON\",\"countryCode\":\"GB\"},\"DEL\":{\"cityCode\":\"DEL\",\"countryCode\":\"IN\"}},\"aircraft\":{\"77W\":\"BOEING 777-300ER\"},\"currencies\":{\"INR\":\"INDIAN RUPEE\"},\"carriers\":{\"AC\":\"AIR CANADA\"}}}",
+  "result": {
+    "meta": {
+      "count": 1,
+      "links": {
+        "self": "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=LON&departureDate=2025-01-17&adults=2&max=1&currencyCode=INR"
+      }
+    },
+    "data": [
+      {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "isUpsellOffer": false,
+        "lastTicketingDate": "2025-01-07",
+        "lastTicketingDateTime": "2025-01-07",
+        "numberOfBookableSeats": 9,
+        "itineraries": [
+          {
+            "duration": "PT10H30M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "DEL",
+                  "terminal": "3",
+                  "at": "2025-01-17T06:20:00"
+                },
+                "arrival": {
+                  "iataCode": "LHR",
+                  "terminal": "2",
+                  "at": "2025-01-17T11:20:00"
+                },
+                "carrierCode": "AC",
+                "number": "851",
+                "aircraft": { "code": "77W" },
+                "operating": { "carrierCode": "AC" },
+                "duration": "PT10H30M",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "total": "53898.00",
+          "base": "19200.00",
+          "fees": [
+            { "amount": "0.00", "type": "SUPPLIER" },
+            { "amount": "0.00", "type": "TICKETING" }
+          ],
+          "grandTotal": "53898.00"
+        },
+        "pricingOptions": {
+          "fareType": ["PUBLISHED"],
+          "includedCheckedBagsOnly": false
+        },
+        "validatingAirlineCodes": ["AC"],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "INR",
+              "total": "26949.00",
+              "base": "9600.00"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "KLO00ABA",
+                "brandedFare": "BASIC",
+                "brandedFareLabel": "BASIC",
+                "class": "K",
+                "includedCheckedBags": { "quantity": 0 },
+                "amenities": [
+                  {
+                    "description": "CHECKED BAG FIRST",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHECKED BAG SECOND",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "COMPLIMENTARY MEAL",
+                    "isChargeable": false,
+                    "amenityType": "MEAL",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "BASIC SEAT",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "travelerId": "2",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "INR",
+              "total": "26949.00",
+              "base": "9600.00"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "KLO00ABA",
+                "brandedFare": "BASIC",
+                "brandedFareLabel": "BASIC",
+                "class": "K",
+                "includedCheckedBags": { "quantity": 0 },
+                "amenities": [
+                  {
+                    "description": "CHECKED BAG FIRST",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHECKED BAG SECOND",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "COMPLIMENTARY MEAL",
+                    "isChargeable": false,
+                    "amenityType": "MEAL",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "BASIC SEAT",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dictionaries": {
+      "locations": {
+        "LHR": { "cityCode": "LON", "countryCode": "GB" },
+        "DEL": { "cityCode": "DEL", "countryCode": "IN" }
+      },
+      "aircraft": { "77W": "BOEING 777-300ER" },
+      "currencies": { "INR": "INDIAN RUPEE" },
+      "carriers": { "AC": "AIR CANADA" }
+    }
+  },
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-01-07",
+      "lastTicketingDateTime": "2025-01-07",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT10H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "DEL",
+                "terminal": "3",
+                "at": "2025-01-17T06:20:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-01-17T11:20:00"
+              },
+              "carrierCode": "AC",
+              "number": "851",
+              "aircraft": { "code": "77W" },
+              "operating": { "carrierCode": "AC" },
+              "duration": "PT10H30M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "INR",
+        "total": "53898.00",
+        "base": "19200.00",
+        "fees": [
+          { "amount": "0.00", "type": "SUPPLIER" },
+          { "amount": "0.00", "type": "TICKETING" }
+        ],
+        "grandTotal": "53898.00"
+      },
+      "pricingOptions": {
+        "fareType": ["PUBLISHED"],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": ["AC"],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "INR",
+            "total": "26949.00",
+            "base": "9600.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "KLO00ABA",
+              "brandedFare": "BASIC",
+              "brandedFareLabel": "BASIC",
+              "class": "K",
+              "includedCheckedBags": { "quantity": 0 },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG FIRST",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHECKED BAG SECOND",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "COMPLIMENTARY MEAL",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "BASIC SEAT",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "travelerId": "2",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "INR",
+            "total": "26949.00",
+            "base": "9600.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "KLO00ABA",
+              "brandedFare": "BASIC",
+              "brandedFareLabel": "BASIC",
+              "class": "K",
+              "includedCheckedBags": { "quantity": 0 },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG FIRST",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHECKED BAG SECOND",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "COMPLIMENTARY MEAL",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "BASIC SEAT",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parsed": true
+}

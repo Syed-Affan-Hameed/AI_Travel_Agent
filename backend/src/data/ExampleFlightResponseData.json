@@ -1,0 +1,1109 @@
+{
+  "headers": {
+    "date": "Sat, 04 Jan 2025 05:53:35 GMT",
+    "content-type": "application/vnd.amadeus+json",
+    "content-length": "9761",
+    "connection": "keep-alive",
+    "ama-internal-message-version": "14.1",
+    "ama-request-id": "0001NWWW6PJV17",
+    "ama-gateway-request-id": "rrt-0d6ef18dc1d079b99-b-de-599751-448271047-5",
+    "access-control-allow-headers": "origin, x-requested-with, accept, Content-Type, Authorization",
+    "access-control-max-age": "3628800",
+    "access-control-allow-methods": "*",
+    "server": "Amadeus",
+    "access-control-allow-origin": "*"
+  },
+  "statusCode": 200,
+  "request": {
+     "host": "test.api.amadeus.com",
+     "port": 443,
+     "ssl": true,
+     "scheme": "https",
+     "verb": "GET",
+     "path": "/v2/shopping/flight-offers",
+     "params": {
+      "originLocationCode": "DEL",
+      "destinationLocationCode": "CHI",
+      "departureDate": "2025-01-17",
+      "adults": "1",
+      "max": "3",
+      "currencyCode": "INR"
+       },
+     "queryPath": "/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=CHI&departureDate=2025-01-17&adults=1&max=3&currencyCode=INR",
+     "bearerToken": "dJEtzMCigL4HV7U9ApIPMG1JdfYq",
+     "clientVersion": "11.0.0",
+     "languageVersion": "20.17.0",
+     "appId": null,
+     "appVersion": null,
+     "headers": {
+      "User-Agent": "amadeus-node/11.0.0 node/20.17.0",
+      "Accept": "application/json, application/vnd.amadeus+json",
+      "Authorization": "Bearer dJEtzMCigL4HV7U9ApIPMG1JdfYq",
+      "Content-Type": "application/vnd.amadeus+json"
+     },
+     "ListHTTPOverride": [
+      "/v2/shopping/flight-offers",
+      "/v1/shopping/seatmaps",
+      "/v1/shopping/availability/flight-availabilities",
+      "/v2/shopping/flight-offers/prediction",
+      "/v1/shopping/flight-offers/pricing",
+      "/v1/shopping/flight-offers/upselling"
+      ]
+      },
+     "body": "{\"meta\":{\"count\":3,\"links\":{\"self\":\"https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=CHI&departureDate=2025-01-17&adults=1&max=3&currencyCode=INR\"}},\"data\":[{\"type\":\"flight-offer\",\"id\":\"1\",\"source\":\"GDS\",\"instantTicketingRequired\":false,\"nonHomogeneous\":false,\"oneWay\":false,\"isUpsellOffer\":false,\"lastTicketingDate\":\"2025-01-07\",\"lastTicketingDateTime\":\"2025-01-07\",\"numberOfBookableSeats\":9,\"itineraries\":[{\"duration\":\"PT23H\",\"segments\":[{\"departure\":{\"iataCode\":\"DEL\",\"terminal\":\"3\",\"at\":\"2025-01-17T01:30:00\"},\"arrival\":{\"iataCode\":\"HKG\",\"terminal\":\"1\",\"at\":\"2025-01-17T09:10:00\"},\"carrierCode\":\"CX\",\"number\":\"694\",\"aircraft\":{\"code\":\"359\"},\"operating\":{\"carrierCode\":\"CX\"},\"duration\":\"PT5H10M\",\"id\":\"1\",\"numberOfStops\":0,\"blacklistedInEU\":false},{\"departure\":{\"iataCode\":\"HKG\",\"terminal\":\"1\",\"at\":\"2025-01-17T12:35:00\"},\"arrival\":{\"iataCode\":\"ORD\",\"terminal\":\"5\",\"at\":\"2025-01-17T13:00:00\"},\"carrierCode\":\"CX\",\"number\":\"806\",\"aircraft\":{\"code\":\"359\"},\"operating\":{\"carrierCode\":\"CX\"},\"duration\":\"PT14H25M\",\"id\":\"2\",\"numberOfStops\":0,\"blacklistedInEU\":false}]}],\"price\":{\"currency\":\"INR\",\"total\":\"54269.00\",\"base\":\"33085.00\",\"fees\":[{\"amount\":\"0.00\",\"type\":\"SUPPLIER\"},{\"amount\":\"0.00\",\"type\":\"TICKETING\"}],\"grandTotal\":\"54269.00\"},\"pricingOptions\":{\"fareType\":[\"PUBLISHED\"],\"includedCheckedBagsOnly\":true},\"validatingAirlineCodes\":[\"CX\"],\"travelerPricings\":[{\"travelerId\":\"1\",\"fareOption\":\"STANDARD\",\"travelerType\":\"ADULT\",\"price\":{\"currency\":\"INR\",\"total\":\"54269.00\",\"base\":\"33085.00\"},\"fareDetailsBySegment\":[{\"segmentId\":\"1\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"QK21IAEO\",\"brandedFare\":\"ECONLIGHT\",\"brandedFareLabel\":\"ECONOMY LIGHT\",\"class\":\"Q\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"1PC MAX 23KG 158LCM EACH\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"1PC MAX 15LB 7KG 115LCM\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"SEAT ASSIGNMENT\",\"isChargeable\":true,\"amenityType\":\"PRE_RESERVED_SEAT\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"REFUNDABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"MILEAGE ACCRUAL\",\"isChargeable\":false,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]},{\"segmentId\":\"2\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"QK21IAEO\",\"brandedFare\":\"ECONLIGHT\",\"brandedFareLabel\":\"ECONOMY LIGHT\",\"class\":\"Q\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"1PC MAX 23KG 158LCM EACH\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"1PC MAX 15LB 7KG 115LCM\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"SEAT ASSIGNMENT\",\"isChargeable\":true,\"amenityType\":\"PRE_RESERVED_SEAT\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"REFUNDABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"MILEAGE ACCRUAL\",\"isChargeable\":false,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]}]}]},{\"type\":\"flight-offer\",\"id\":\"2\",\"source\":\"GDS\",\"instantTicketingRequired\":false,\"nonHomogeneous\":false,\"oneWay\":false,\"isUpsellOffer\":false,\"lastTicketingDate\":\"2025-01-07\",\"lastTicketingDateTime\":\"2025-01-07\",\"numberOfBookableSeats\":9,\"itineraries\":[{\"duration\":\"PT25H45M\",\"segments\":[{\"departure\":{\"iataCode\":\"DEL\",\"terminal\":\"3\",\"at\":\"2025-01-17T22:45:00\"},\"arrival\":{\"iataCode\":\"HKG\",\"terminal\":\"1\",\"at\":\"2025-01-18T06:15:00\"},\"carrierCode\":\"CX\",\"number\":\"698\",\"aircraft\":{\"code\":\"77W\"},\"operating\":{\"carrierCode\":\"CX\"},\"duration\":\"PT5H\",\"id\":\"5\",\"numberOfStops\":0,\"blacklistedInEU\":false},{\"departure\":{\"iataCode\":\"HKG\",\"terminal\":\"1\",\"at\":\"2025-01-18T12:35:00\"},\"arrival\":{\"iataCode\":\"ORD\",\"terminal\":\"5\",\"at\":\"2025-01-18T13:00:00\"},\"carrierCode\":\"CX\",\"number\":\"806\",\"aircraft\":{\"code\":\"359\"},\"operating\":{\"carrierCode\":\"CX\"},\"duration\":\"PT14H25M\",\"id\":\"6\",\"numberOfStops\":0,\"blacklistedInEU\":false}]}],\"price\":{\"currency\":\"INR\",\"total\":\"54269.00\",\"base\":\"33085.00\",\"fees\":[{\"amount\":\"0.00\",\"type\":\"SUPPLIER\"},{\"amount\":\"0.00\",\"type\":\"TICKETING\"}],\"grandTotal\":\"54269.00\"},\"pricingOptions\":{\"fareType\":[\"PUBLISHED\"],\"includedCheckedBagsOnly\":true},\"validatingAirlineCodes\":[\"CX\"],\"travelerPricings\":[{\"travelerId\":\"1\",\"fareOption\":\"STANDARD\",\"travelerType\":\"ADULT\",\"price\":{\"currency\":\"INR\",\"total\":\"54269.00\",\"base\":\"33085.00\"},\"fareDetailsBySegment\":[{\"segmentId\":\"5\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"QK21IAEO\",\"brandedFare\":\"ECONLIGHT\",\"brandedFareLabel\":\"ECONOMY LIGHT\",\"class\":\"Q\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"1PC MAX 23KG 158LCM EACH\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"1PC MAX 15LB 7KG 115LCM\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"SEAT ASSIGNMENT\",\"isChargeable\":true,\"amenityType\":\"PRE_RESERVED_SEAT\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"REFUNDABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"MILEAGE ACCRUAL\",\"isChargeable\":false,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]},{\"segmentId\":\"6\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"QK21IAEO\",\"brandedFare\":\"ECONLIGHT\",\"brandedFareLabel\":\"ECONOMY LIGHT\",\"class\":\"Q\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"1PC MAX 23KG 158LCM EACH\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"1PC MAX 15LB 7KG 115LCM\",\"isChargeable\":false,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"SEAT ASSIGNMENT\",\"isChargeable\":true,\"amenityType\":\"PRE_RESERVED_SEAT\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"REFUNDABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"MILEAGE ACCRUAL\",\"isChargeable\":false,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]}]}]},{\"type\":\"flight-offer\",\"id\":\"3\",\"source\":\"GDS\",\"instantTicketingRequired\":false,\"nonHomogeneous\":false,\"oneWay\":false,\"isUpsellOffer\":false,\"lastTicketingDate\":\"2025-01-07\",\"lastTicketingDateTime\":\"2025-01-07\",\"numberOfBookableSeats\":9,\"itineraries\":[{\"duration\":\"PT22H19M\",\"segments\":[{\"departure\":{\"iataCode\":\"DEL\",\"terminal\":\"3\",\"at\":\"2025-01-17T00:05:00\"},\"arrival\":{\"iataCode\":\"YUL\",\"at\":\"2025-01-17T06:10:00\"},\"carrierCode\":\"AC\",\"number\":\"51\",\"aircraft\":{\"code\":\"789\"},\"operating\":{\"carrierCode\":\"AC\"},\"duration\":\"PT16H35M\",\"id\":\"3\",\"numberOfStops\":0,\"blacklistedInEU\":false},{\"departure\":{\"iataCode\":\"YUL\",\"at\":\"2025-01-17T09:15:00\"},\"arrival\":{\"iataCode\":\"ORD\",\"terminal\":\"2\",\"at\":\"2025-01-17T10:54:00\"},\"carrierCode\":\"AC\",\"number\":\"8959\",\"aircraft\":{\"code\":\"E75\"},\"duration\":\"PT2H39M\",\"id\":\"4\",\"numberOfStops\":0,\"blacklistedInEU\":false}]}],\"price\":{\"currency\":\"INR\",\"total\":\"68676.00\",\"base\":\"40800.00\",\"fees\":[{\"amount\":\"0.00\",\"type\":\"SUPPLIER\"},{\"amount\":\"0.00\",\"type\":\"TICKETING\"}],\"grandTotal\":\"68676.00\"},\"pricingOptions\":{\"fareType\":[\"PUBLISHED\"],\"includedCheckedBagsOnly\":true},\"validatingAirlineCodes\":[\"AC\"],\"travelerPricings\":[{\"travelerId\":\"1\",\"fareOption\":\"STANDARD\",\"travelerType\":\"ADULT\",\"price\":{\"currency\":\"INR\",\"total\":\"68676.00\",\"base\":\"40800.00\"},\"fareDetailsBySegment\":[{\"segmentId\":\"3\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"SNCO0\",\"brandedFare\":\"STANDARD\",\"brandedFareLabel\":\"STANDARD\",\"class\":\"S\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"CHECKED BAG SECOND\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"COMPLIMENTARY MEAL\",\"isChargeable\":false,\"amenityType\":\"MEAL\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"BASIC SEAT\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]},{\"segmentId\":\"4\",\"cabin\":\"ECONOMY\",\"fareBasis\":\"SNCO0\",\"brandedFare\":\"STANDARD\",\"brandedFareLabel\":\"STANDARD\",\"class\":\"S\",\"includedCheckedBags\":{\"quantity\":1},\"amenities\":[{\"description\":\"CHECKED BAG SECOND\",\"isChargeable\":true,\"amenityType\":\"BAGGAGE\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"COMPLIMENTARY MEAL\",\"isChargeable\":false,\"amenityType\":\"MEAL\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"BASIC SEAT\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}},{\"description\":\"CHANGEABLE TICKET\",\"isChargeable\":true,\"amenityType\":\"BRANDED_FARES\",\"amenityProvider\":{\"name\":\"BrandedFare\"}}]}]}]}],\"dictionaries\":{\"locations\":{\"ORD\":{\"cityCode\":\"CHI\",\"countryCode\":\"US\"},\"YUL\":{\"cityCode\":\"YMQ\",\"countryCode\":\"CA\"},\"HKG\":{\"cityCode\":\"HKG\",\"countryCode\":\"HK\"},\"DEL\":{\"cityCode\":\"DEL\",\"countryCode\":\"IN\"}},\"aircraft\":{\"E75\":\"EMBRAER 175\",\"359\":\"AIRBUS A350-900\",\"77W\":\"BOEING 777-300ER\",\"789\":\"BOEING 787-9\"},\"currencies\":{\"INR\":\"INDIAN RUPEE\"},\"carriers\":{\"AC\":\"AIR CANADA\",\"CX\":\"CATHAY PACIFIC\"}}}",
+     "result": {
+     "meta": {
+      "count": 3,
+      "links": {
+        "self": "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=DEL&destinationLocationCode=CHI&departureDate=2025-01-17&adults=1&max=3&currencyCode=INR"
+      }
+     },
+     "data": [
+      {
+        "type": "flight-offer",
+        "id": "1",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "isUpsellOffer": false,
+        "lastTicketingDate": "2025-01-07",
+        "lastTicketingDateTime": "2025-01-07",
+        "numberOfBookableSeats": 9,
+        "itineraries": [
+          {
+            "duration": "PT23H",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "DEL",
+                  "terminal": "3",
+                  "at": "2025-01-17T01:30:00"
+                },
+                "arrival": {
+                  "iataCode": "HKG",
+                  "terminal": "1",
+                  "at": "2025-01-17T09:10:00"
+                },
+                "carrierCode": "CX",
+                "number": "694",
+                "aircraft": { "code": "359" },
+                "operating": { "carrierCode": "CX" },
+                "duration": "PT5H10M",
+                "id": "1",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "HKG",
+                  "terminal": "1",
+                  "at": "2025-01-17T12:35:00"
+                },
+                "arrival": {
+                  "iataCode": "ORD",
+                  "terminal": "5",
+                  "at": "2025-01-17T13:00:00"
+                },
+                "carrierCode": "CX",
+                "number": "806",
+                "aircraft": { "code": "359" },
+                "operating": { "carrierCode": "CX" },
+                "duration": "PT14H25M",
+                "id": "2",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "total": "54269.00",
+          "base": "33085.00",
+          "fees": [
+            { "amount": "0.00", "type": "SUPPLIER" },
+            { "amount": "0.00", "type": "TICKETING" }
+          ],
+          "grandTotal": "54269.00"
+        },
+        "pricingOptions": {
+          "fareType": ["PUBLISHED"],
+          "includedCheckedBagsOnly": true
+        },
+        "validatingAirlineCodes": ["CX"],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "INR",
+              "total": "54269.00",
+              "base": "33085.00"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "1",
+                "cabin": "ECONOMY",
+                "fareBasis": "QK21IAEO",
+                "brandedFare": "ECONLIGHT",
+                "brandedFareLabel": "ECONOMY LIGHT",
+                "class": "Q",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "1PC MAX 23KG 158LCM EACH",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "1PC MAX 15LB 7KG 115LCM",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "SEAT ASSIGNMENT",
+                    "isChargeable": true,
+                    "amenityType": "PRE_RESERVED_SEAT",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "REFUNDABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "MILEAGE ACCRUAL",
+                    "isChargeable": false,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              },
+              {
+                "segmentId": "2",
+                "cabin": "ECONOMY",
+                "fareBasis": "QK21IAEO",
+                "brandedFare": "ECONLIGHT",
+                "brandedFareLabel": "ECONOMY LIGHT",
+                "class": "Q",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "1PC MAX 23KG 158LCM EACH",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "1PC MAX 15LB 7KG 115LCM",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "SEAT ASSIGNMENT",
+                    "isChargeable": true,
+                    "amenityType": "PRE_RESERVED_SEAT",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "REFUNDABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "MILEAGE ACCRUAL",
+                    "isChargeable": false,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "2",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "isUpsellOffer": false,
+        "lastTicketingDate": "2025-01-07",
+        "lastTicketingDateTime": "2025-01-07",
+        "numberOfBookableSeats": 9,
+        "itineraries": [
+          {
+            "duration": "PT25H45M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "DEL",
+                  "terminal": "3",
+                  "at": "2025-01-17T22:45:00"
+                },
+                "arrival": {
+                  "iataCode": "HKG",
+                  "terminal": "1",
+                  "at": "2025-01-18T06:15:00"
+                },
+                "carrierCode": "CX",
+                "number": "698",
+                "aircraft": { "code": "77W" },
+                "operating": { "carrierCode": "CX" },
+                "duration": "PT5H",
+                "id": "5",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": {
+                  "iataCode": "HKG",
+                  "terminal": "1",
+                  "at": "2025-01-18T12:35:00"
+                },
+                "arrival": {
+                  "iataCode": "ORD",
+                  "terminal": "5",
+                  "at": "2025-01-18T13:00:00"
+                },
+                "carrierCode": "CX",
+                "number": "806",
+                "aircraft": { "code": "359" },
+                "operating": { "carrierCode": "CX" },
+                "duration": "PT14H25M",
+                "id": "6",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "total": "54269.00",
+          "base": "33085.00",
+          "fees": [
+            { "amount": "0.00", "type": "SUPPLIER" },
+            { "amount": "0.00", "type": "TICKETING" }
+          ],
+          "grandTotal": "54269.00"
+        },
+        "pricingOptions": {
+          "fareType": ["PUBLISHED"],
+          "includedCheckedBagsOnly": true
+        },
+        "validatingAirlineCodes": ["CX"],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "INR",
+              "total": "54269.00",
+              "base": "33085.00"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "5",
+                "cabin": "ECONOMY",
+                "fareBasis": "QK21IAEO",
+                "brandedFare": "ECONLIGHT",
+                "brandedFareLabel": "ECONOMY LIGHT",
+                "class": "Q",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "1PC MAX 23KG 158LCM EACH",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "1PC MAX 15LB 7KG 115LCM",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "SEAT ASSIGNMENT",
+                    "isChargeable": true,
+                    "amenityType": "PRE_RESERVED_SEAT",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "REFUNDABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "MILEAGE ACCRUAL",
+                    "isChargeable": false,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              },
+              {
+                "segmentId": "6",
+                "cabin": "ECONOMY",
+                "fareBasis": "QK21IAEO",
+                "brandedFare": "ECONLIGHT",
+                "brandedFareLabel": "ECONOMY LIGHT",
+                "class": "Q",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "1PC MAX 23KG 158LCM EACH",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "1PC MAX 15LB 7KG 115LCM",
+                    "isChargeable": false,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "SEAT ASSIGNMENT",
+                    "isChargeable": true,
+                    "amenityType": "PRE_RESERVED_SEAT",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "REFUNDABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "MILEAGE ACCRUAL",
+                    "isChargeable": false,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "flight-offer",
+        "id": "3",
+        "source": "GDS",
+        "instantTicketingRequired": false,
+        "nonHomogeneous": false,
+        "oneWay": false,
+        "isUpsellOffer": false,
+        "lastTicketingDate": "2025-01-07",
+        "lastTicketingDateTime": "2025-01-07",
+        "numberOfBookableSeats": 9,
+        "itineraries": [
+          {
+            "duration": "PT22H19M",
+            "segments": [
+              {
+                "departure": {
+                  "iataCode": "DEL",
+                  "terminal": "3",
+                  "at": "2025-01-17T00:05:00"
+                },
+                "arrival": { "iataCode": "YUL", "at": "2025-01-17T06:10:00" },
+                "carrierCode": "AC",
+                "number": "51",
+                "aircraft": { "code": "789" },
+                "operating": { "carrierCode": "AC" },
+                "duration": "PT16H35M",
+                "id": "3",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              },
+              {
+                "departure": { "iataCode": "YUL", "at": "2025-01-17T09:15:00" },
+                "arrival": {
+                  "iataCode": "ORD",
+                  "terminal": "2",
+                  "at": "2025-01-17T10:54:00"
+                },
+                "carrierCode": "AC",
+                "number": "8959",
+                "aircraft": { "code": "E75" },
+                "duration": "PT2H39M",
+                "id": "4",
+                "numberOfStops": 0,
+                "blacklistedInEU": false
+              }
+            ]
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "total": "68676.00",
+          "base": "40800.00",
+          "fees": [
+            { "amount": "0.00", "type": "SUPPLIER" },
+            { "amount": "0.00", "type": "TICKETING" }
+          ],
+          "grandTotal": "68676.00"
+        },
+        "pricingOptions": {
+          "fareType": ["PUBLISHED"],
+          "includedCheckedBagsOnly": true
+        },
+        "validatingAirlineCodes": ["AC"],
+        "travelerPricings": [
+          {
+            "travelerId": "1",
+            "fareOption": "STANDARD",
+            "travelerType": "ADULT",
+            "price": {
+              "currency": "INR",
+              "total": "68676.00",
+              "base": "40800.00"
+            },
+            "fareDetailsBySegment": [
+              {
+                "segmentId": "3",
+                "cabin": "ECONOMY",
+                "fareBasis": "SNCO0",
+                "brandedFare": "STANDARD",
+                "brandedFareLabel": "STANDARD",
+                "class": "S",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "CHECKED BAG SECOND",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "COMPLIMENTARY MEAL",
+                    "isChargeable": false,
+                    "amenityType": "MEAL",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "BASIC SEAT",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              },
+              {
+                "segmentId": "4",
+                "cabin": "ECONOMY",
+                "fareBasis": "SNCO0",
+                "brandedFare": "STANDARD",
+                "brandedFareLabel": "STANDARD",
+                "class": "S",
+                "includedCheckedBags": { "quantity": 1 },
+                "amenities": [
+                  {
+                    "description": "CHECKED BAG SECOND",
+                    "isChargeable": true,
+                    "amenityType": "BAGGAGE",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "COMPLIMENTARY MEAL",
+                    "isChargeable": false,
+                    "amenityType": "MEAL",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "BASIC SEAT",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  },
+                  {
+                    "description": "CHANGEABLE TICKET",
+                    "isChargeable": true,
+                    "amenityType": "BRANDED_FARES",
+                    "amenityProvider": { "name": "BrandedFare" }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+     ],
+     "dictionaries": {
+      "locations": {
+        "ORD": { "cityCode": "CHI", "countryCode": "US" },
+        "YUL": { "cityCode": "YMQ", "countryCode": "CA" },
+        "HKG": { "cityCode": "HKG", "countryCode": "HK" },
+        "DEL": { "cityCode": "DEL", "countryCode": "IN" }
+      },
+      "aircraft": {
+        "359": "AIRBUS A350-900",
+        "789": "BOEING 787-9",
+        "E75": "EMBRAER 175",
+        "77W": "BOEING 777-300ER"
+      },
+      "currencies": { "INR": "INDIAN RUPEE" },
+      "carriers": { "AC": "AIR CANADA", "CX": "CATHAY PACIFIC" }
+     }
+  },
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-01-07",
+      "lastTicketingDateTime": "2025-01-07",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT23H",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "DEL",
+                "terminal": "3",
+                "at": "2025-01-17T01:30:00"
+              },
+              "arrival": {
+                "iataCode": "HKG",
+                "terminal": "1",
+                "at": "2025-01-17T09:10:00"
+              },
+              "carrierCode": "CX",
+              "number": "694",
+              "aircraft": { "code": "359" },
+              "operating": { "carrierCode": "CX" },
+              "duration": "PT5H10M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "HKG",
+                "terminal": "1",
+                "at": "2025-01-17T12:35:00"
+              },
+              "arrival": {
+                "iataCode": "ORD",
+                "terminal": "5",
+                "at": "2025-01-17T13:00:00"
+              },
+              "carrierCode": "CX",
+              "number": "806",
+              "aircraft": { "code": "359" },
+              "operating": { "carrierCode": "CX" },
+              "duration": "PT14H25M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "INR",
+        "total": "54269.00",
+        "base": "33085.00",
+        "fees": [
+          { "amount": "0.00", "type": "SUPPLIER" },
+          { "amount": "0.00", "type": "TICKETING" }
+        ],
+        "grandTotal": "54269.00"
+      },
+      "pricingOptions": {
+        "fareType": ["PUBLISHED"],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": ["CX"],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "INR",
+            "total": "54269.00",
+            "base": "33085.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "QK21IAEO",
+              "brandedFare": "ECONLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "Q",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "1PC MAX 23KG 158LCM EACH",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "1PC MAX 15LB 7KG 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "REFUNDABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "QK21IAEO",
+              "brandedFare": "ECONLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "Q",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "1PC MAX 23KG 158LCM EACH",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "1PC MAX 15LB 7KG 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "REFUNDABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "2",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-01-07",
+      "lastTicketingDateTime": "2025-01-07",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT25H45M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "DEL",
+                "terminal": "3",
+                "at": "2025-01-17T22:45:00"
+              },
+              "arrival": {
+                "iataCode": "HKG",
+                "terminal": "1",
+                "at": "2025-01-18T06:15:00"
+              },
+              "carrierCode": "CX",
+              "number": "698",
+              "aircraft": { "code": "77W" },
+              "operating": { "carrierCode": "CX" },
+              "duration": "PT5H",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "HKG",
+                "terminal": "1",
+                "at": "2025-01-18T12:35:00"
+              },
+              "arrival": {
+                "iataCode": "ORD",
+                "terminal": "5",
+                "at": "2025-01-18T13:00:00"
+              },
+              "carrierCode": "CX",
+              "number": "806",
+              "aircraft": { "code": "359" },
+              "operating": { "carrierCode": "CX" },
+              "duration": "PT14H25M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "INR",
+        "total": "54269.00",
+        "base": "33085.00",
+        "fees": [
+          { "amount": "0.00", "type": "SUPPLIER" },
+          { "amount": "0.00", "type": "TICKETING" }
+        ],
+        "grandTotal": "54269.00"
+      },
+      "pricingOptions": {
+        "fareType": ["PUBLISHED"],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": ["CX"],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "INR",
+            "total": "54269.00",
+            "base": "33085.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "QK21IAEO",
+              "brandedFare": "ECONLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "Q",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "1PC MAX 23KG 158LCM EACH",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "1PC MAX 15LB 7KG 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "REFUNDABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "QK21IAEO",
+              "brandedFare": "ECONLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "Q",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "1PC MAX 23KG 158LCM EACH",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "1PC MAX 15LB 7KG 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "REFUNDABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "3",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-01-07",
+      "lastTicketingDateTime": "2025-01-07",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT22H19M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "DEL",
+                "terminal": "3",
+                "at": "2025-01-17T00:05:00"
+              },
+              "arrival": { "iataCode": "YUL", "at": "2025-01-17T06:10:00" },
+              "carrierCode": "AC",
+              "number": "51",
+              "aircraft": { "code": "789" },
+              "operating": { "carrierCode": "AC" },
+              "duration": "PT16H35M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": { "iataCode": "YUL", "at": "2025-01-17T09:15:00" },
+              "arrival": {
+                "iataCode": "ORD",
+                "terminal": "2",
+                "at": "2025-01-17T10:54:00"
+              },
+              "carrierCode": "AC",
+              "number": "8959",
+              "aircraft": { "code": "E75" },
+              "duration": "PT2H39M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "INR",
+        "total": "68676.00",
+        "base": "40800.00",
+        "fees": [
+          { "amount": "0.00", "type": "SUPPLIER" },
+          { "amount": "0.00", "type": "TICKETING" }
+        ],
+        "grandTotal": "68676.00"
+      },
+      "pricingOptions": {
+        "fareType": ["PUBLISHED"],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": ["AC"],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "INR",
+            "total": "68676.00",
+            "base": "40800.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "SNCO0",
+              "brandedFare": "STANDARD",
+              "brandedFareLabel": "STANDARD",
+              "class": "S",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG SECOND",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "COMPLIMENTARY MEAL",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "BASIC SEAT",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "SNCO0",
+              "brandedFare": "STANDARD",
+              "brandedFareLabel": "STANDARD",
+              "class": "S",
+              "includedCheckedBags": { "quantity": 1 },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG SECOND",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "COMPLIMENTARY MEAL",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "BASIC SEAT",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": { "name": "BrandedFare" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parsed": true
+}
