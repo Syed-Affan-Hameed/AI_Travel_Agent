@@ -1,6 +1,6 @@
 # AI Travel Agent
 
-This repository contains a full-stack AI Travel Agent application built with React, TypeScript, Vite, and Node.js. The backend uses OpenAI's GPT-4 model to provide travel recommendations, along with weather forecasts and travel clothing recommendations.
+This repository contains a full-stack AI Travel Agent application built with React, TypeScript, Vite, and Node.js. The backend uses OpenAI's GPT-4 model to provide travel recommendations, along with weather forecasts and travel clothing recommendations.I learnt a lot while building this project, this was a project assignment after the completion of the 'Learn AI Agents' course by Bob Ziroll from Scrimba.
 
 ## Prerequisites
 
