@@ -30,7 +30,7 @@ cd ai-travel-agent
 cd backend
 npm install
 ```
-### 3. Create a .env file in the backend directory and add your OpenAI API key:
+### 3. Create a .env file in the backend directory and add your API keys and other environment variables:
 
 ```sh
 OPENAI_API_KEY=your_openai_api_key
